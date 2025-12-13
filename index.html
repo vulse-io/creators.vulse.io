@@ -6,7 +6,7 @@
     <meta name="description" content="Vulse — The open marketplace for creators and brands. Be among the first 1,000 creators.">
     <meta name="theme-color" content="#1a1f3c">
     
-    <title>Vulse for Creators — Early Access</title>
+    <title>Vulse Creators — Early Access</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -666,7 +666,6 @@
         }
 
 
-        /* Hidden iframe for form submission */
         .hidden-iframe {
             display: none !important;
         }
@@ -694,7 +693,6 @@
 </head>
 <body>
 
-    <!-- Hidden iframe for Google Form submission -->
     <iframe name="hidden_iframe" class="hidden-iframe"></iframe>
 
     <nav class="navbar">
@@ -762,7 +760,6 @@
                       method="POST"
                       target="hidden_iframe">
                     
-                    <!-- Step 1: Basic Info -->
                     <div class="step active" id="step1">
                         <div class="form-group">
                             <label class="label">Your name</label>
@@ -797,13 +794,11 @@
                         </div>
                     </div>
 
-                    <!-- Step 2: Platforms -->
                     <div class="step" id="step2">
                         <div class="form-group">
                             <label class="label">Where are you active? <span class="label-sub">(select at least 1)</span></label>
                             
                             <div class="platform-list">
-                                <!-- Instagram -->
                                 <div class="platform-item" id="platform-ig">
                                     <div class="platform-header" onclick="togglePlatform('ig')">
                                         <div class="platform-checkbox">
@@ -832,7 +827,6 @@
                                     </div>
                                 </div>
 
-                                <!-- TikTok -->
                                 <div class="platform-item" id="platform-tiktok">
                                     <div class="platform-header" onclick="togglePlatform('tiktok')">
                                         <div class="platform-checkbox">
@@ -859,7 +853,6 @@
                                     </div>
                                 </div>
 
-                                <!-- YouTube -->
                                 <div class="platform-item" id="platform-youtube">
                                     <div class="platform-header" onclick="togglePlatform('youtube')">
                                         <div class="platform-checkbox">
@@ -895,7 +888,6 @@
                         </div>
                     </div>
 
-                    <!-- Step 3: Categories -->
                     <div class="step" id="step3">
                         <div class="form-group">
                             <label class="label">What's your content about? <span class="label-sub">(pick multiple)</span></label>
@@ -964,7 +956,6 @@
                                     </div>
                                 </label>
                             </div>
-                            <!-- Hidden input for categories - will be populated by JS -->
                             <input type="hidden" name="entry.2140272413" id="categories_hidden">
                         </div>
 
@@ -976,7 +967,6 @@
 
                 </form>
 
-                <!-- Success -->
                 <div class="success-screen" id="successScreen">
                     <div class="success-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -1131,23 +1121,20 @@
                 return;
             }
 
-            // Collect selected categories and put in hidden field
+
             const selectedCategories = [];
             document.querySelectorAll('input[name="category"]:checked').forEach(cb => {
                 selectedCategories.push(cb.value);
             });
             document.getElementById('categories_hidden').value = selectedCategories.join(', ');
 
-            // Get name for success screen
             const fullname = document.getElementById('fullname').value.trim();
             const initials = fullname.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
 
-            // Update button state
             const btn = document.getElementById('submitBtn');
             btn.innerHTML = 'Submitting...';
             btn.disabled = true;
 
-            // Show success after short delay (form submits to iframe)
             setTimeout(() => {
                 document.getElementById('successAvatar').innerText = initials;
                 document.getElementById('successName').innerText = fullname;

@@ -2,1472 +2,1163 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description" content="Join Vulse as a creator. First 1,000 creators get lifetime 0% commission. Limited spots available.">
-    <meta name="theme-color" content="#ff6b35">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Vulse — The open marketplace for creators and brands. Be among the first 1,000 creators.">
+    <meta name="theme-color" content="#1a1f3c">
     
-    <meta property="og:title" content="Vulse — Exclusive Creator Access">
-    <meta property="og:description" content="First 1,000 creators get lifetime 0% commission. Claim your spot now.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://creators.vulse.io">
-    
-    <title>Vulse — Join the First 1,000 Creators</title>
+    <title>Vulse for Creators — Early Access</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-primary: #0a0a0a;
-            --bg-secondary: #111111;
-            --bg-card: #161616;
-            --bg-input: #1a1a1a;
-            --text-primary: #ffffff;
-            --text-secondary: #a3a3a3;
-            --text-muted: #6b6b6b;
-            --accent: #ff6b35;
-            --accent-hover: #ff8555;
-            --accent-glow: rgba(255, 107, 53, 0.3);
-            --accent-soft: rgba(255, 107, 53, 0.1);
-            --border-color: #2a2a2a;
-            --border-light: #333333;
-            --success: #22c55e;
-            --success-glow: rgba(34, 197, 94, 0.2);
-            --gradient-1: linear-gradient(135deg, #ff6b35 0%, #ff8f6b 100%);
-            --gradient-2: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-            --radius-sm: 8px;
-            --radius-md: 12px;
+            --white: #ffffff;
+            --off-white: #f8fafc;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            
+            --dark: #1a1f3c;
+            --dark-soft: #2d3356;
+            
+            --orange: #ff6b35;
+            --orange-hover: #e85a2a;
+            --orange-light: rgba(255, 107, 53, 0.08);
+            --orange-glow: rgba(255, 107, 53, 0.15);
+            
+            --success: #10b981;
+            --success-light: rgba(16, 185, 129, 0.1);
+            
+            --radius: 12px;
             --radius-lg: 16px;
-            --radius-xl: 24px;
-            --radius-full: 9999px;
-            --shadow-glow: 0 0 60px var(--accent-glow);
-            --transition: 200ms ease;
+            --radius-xl: 20px;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         html {
-            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
+            background: linear-gradient(180deg, var(--off-white) 0%, var(--white) 100%);
+            color: var(--dark);
             min-height: 100vh;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-
-        .bg-effects {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .bg-glow {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.4;
-        }
-
-        .bg-glow-1 {
-            top: -200px;
-            right: -100px;
-            background: var(--accent);
-            animation: float 20s ease-in-out infinite;
-        }
-
-        .bg-glow-2 {
-            bottom: -200px;
-            left: -100px;
-            background: #ff8f6b;
-            opacity: 0.2;
-            animation: float 25s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(30px, 30px); }
-        }
-
-        .bg-grid {
-            position: absolute;
-            inset: 0;
-            background-image: 
-                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-            background-size: 60px 60px;
-            mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
-        }
-
-        .main {
-            position: relative;
-            z-index: 1;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            min-height: 100dvh;
         }
 
         .navbar {
-            padding: 20px 24px;
+            padding: 14px 20px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .logo {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--text-primary);
-        }
-
-        .logo-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 10px;
-            background: var(--accent-soft);
-            border-radius: var(--radius-full);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.6875rem;
-            font-weight: 600;
-            color: var(--accent);
-            margin-left: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .spots-counter {
             display: flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-full);
+            text-decoration: none;
         }
 
-        .spots-dot {
-            width: 8px;
-            height: 8px;
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--dark);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-badge {
+            font-size: 0.625rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--orange);
+            background: var(--orange-light);
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+
+        .nav-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: var(--gray-500);
+            background: var(--gray-50);
+            padding: 6px 10px;
+            border-radius: 100px;
+        }
+
+        .nav-badge-dot {
+            width: 6px;
+            height: 6px;
             background: var(--success);
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 var(--success-glow); }
-            50% { opacity: 0.8; box-shadow: 0 0 0 8px transparent; }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
 
-        .spots-text {
-            font-size: 0.8125rem;
-            color: var(--text-secondary);
+        .main {
+            max-width: 440px;
+            margin: 0 auto;
+            padding: 20px 20px 32px;
         }
 
-        .spots-number {
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .content {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 24px 80px;
-        }
-
-        .form-wrapper {
-            width: 100%;
-            max-width: 520px;
-        }
-
-        .form-header {
+        .hero {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
-        .exclusive-badge {
+        .hero-eyebrow {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            background: var(--gradient-1);
-            border-radius: var(--radius-full);
-            font-size: 0.8125rem;
+            gap: 6px;
+            font-size: 0.6875rem;
             font-weight: 700;
-            color: white;
-            margin-bottom: 24px;
-            box-shadow: var(--shadow-glow);
-            animation: glow 3s ease-in-out infinite;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--orange);
+            background: var(--orange-light);
+            padding: 6px 12px;
+            border-radius: 100px;
+            margin-bottom: 14px;
         }
 
-        @keyframes glow {
-            0%, 100% { box-shadow: 0 0 30px var(--accent-glow); }
-            50% { box-shadow: 0 0 50px var(--accent-glow); }
+        .hero-eyebrow svg {
+            width: 12px;
+            height: 12px;
         }
 
-        .exclusive-badge svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        .form-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(2rem, 6vw, 3rem);
+        .hero-title {
+            font-size: 1.5rem;
             font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -1px;
-            margin-bottom: 16px;
+            color: var(--dark);
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
         }
 
-        .form-title .highlight {
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .form-subtitle {
-            font-size: 1.0625rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .benefits {
-            display: flex;
-            justify-content: center;
-            gap: 32px;
-            margin: 32px 0;
-            flex-wrap: wrap;
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .benefit-icon {
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--accent-soft);
-            border-radius: var(--radius-md);
-        }
-
-        .benefit-icon svg {
-            width: 18px;
-            height: 18px;
-            color: var(--accent);
-        }
-
-        .benefit-text {
+        .hero-desc {
             font-size: 0.875rem;
-            color: var(--text-secondary);
+            color: var(--gray-500);
+            line-height: 1.5;
         }
 
-        .benefit-text strong {
-            display: block;
-            color: var(--text-primary);
-            font-weight: 600;
+        .perks {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 14px;
+            background: var(--dark);
+            border-radius: var(--radius);
+        }
+
+        .perk {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .perk svg {
+            width: 14px;
+            height: 14px;
+            color: var(--orange);
         }
 
         .form-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
+            background: var(--white);
+            border: 1px solid var(--gray-200);
             border-radius: var(--radius-xl);
-            padding: 40px;
-            position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
         }
 
-        .form-card::before {
+        .form-progress {
+            display: flex;
+            background: var(--gray-50);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .progress-item {
+            flex: 1;
+            padding: 12px 8px;
+            text-align: center;
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: var(--gray-400);
+            position: relative;
+            transition: all 0.2s;
+        }
+
+        .progress-item.active {
+            color: var(--orange);
+            background: var(--white);
+        }
+
+        .progress-item.completed {
+            color: var(--success);
+        }
+
+        .progress-item.active::after {
             content: '';
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: var(--gradient-1);
+            height: 2px;
+            background: var(--orange);
         }
 
-        .progress-section {
-            margin-bottom: 32px;
+        .progress-item.completed::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--success);
         }
 
-        .progress-header {
-            display: flex;
-            justify-content: space-between;
+        .progress-num {
+            display: inline-flex;
             align-items: center;
-            margin-bottom: 12px;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+            background: var(--gray-200);
+            border-radius: 50%;
+            font-size: 0.625rem;
+            margin-right: 4px;
+            transition: all 0.2s;
         }
 
-        .progress-step {
-            font-size: 0.8125rem;
-            font-weight: 600;
-            color: var(--accent);
+        .progress-item.active .progress-num {
+            background: var(--orange);
+            color: white;
         }
 
-        .progress-spots {
-            font-size: 0.75rem;
-            color: var(--text-muted);
+        .progress-item.completed .progress-num {
+            background: var(--success);
+            color: white;
         }
 
-        .progress-bar {
-            height: 6px;
-            background: var(--bg-input);
-            border-radius: var(--radius-full);
-            overflow: hidden;
+        .form-body {
+            padding: 20px;
         }
 
-        .progress-fill {
-            height: 100%;
-            background: var(--gradient-1);
-            border-radius: var(--radius-full);
-            transition: width 0.5s ease;
-        }
-
-        .form-step {
+        .step {
             display: none;
+            animation: slideIn 0.25s ease;
         }
 
-        .form-step.active {
+        .step.active {
             display: block;
-            animation: slideIn 0.4s ease;
         }
 
         @keyframes slideIn {
-            from { opacity: 0; transform: translateX(20px); }
+            from { opacity: 0; transform: translateX(10px); }
             to { opacity: 1; transform: translateX(0); }
         }
 
         .form-group {
-            margin-bottom: 24px;
+            margin-bottom: 14px;
         }
 
-        .form-label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.875rem;
+        .label {
+            display: block;
+            font-size: 0.8125rem;
             font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 10px;
+            color: var(--dark);
+            margin-bottom: 6px;
         }
 
-        .form-label svg {
-            width: 16px;
-            height: 16px;
-            color: var(--accent);
+        .label-sub {
+            font-weight: 400;
+            color: var(--gray-400);
         }
 
-        .form-input,
-        .form-select {
+        input, select {
             width: 100%;
-            padding: 16px 18px;
-            font-size: 1rem;
+            padding: 12px 14px;
+            font-size: 0.9375rem;
             font-family: inherit;
-            color: var(--text-primary);
-            background: var(--bg-input);
-            border: 2px solid var(--border-color);
-            border-radius: var(--radius-md);
-            transition: all var(--transition);
+            background: var(--gray-50);
+            border: 1.5px solid var(--gray-200);
+            border-radius: var(--radius);
+            color: var(--dark);
+            transition: all 0.15s;
             -webkit-appearance: none;
         }
 
-        .form-input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .form-input:hover,
-        .form-select:hover {
-            border-color: var(--border-light);
-        }
-
-        .form-input:focus,
-        .form-select:focus {
+        input:focus, select:focus {
             outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 4px var(--accent-soft);
+            border-color: var(--orange);
+            background: var(--white);
+            box-shadow: 0 0 0 3px var(--orange-glow);
         }
 
-        .form-select {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236b6b6b' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+        input::placeholder {
+            color: var(--gray-400);
+        }
+
+        select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%239ca3af' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: right 14px center;
-            background-size: 20px;
-            padding-right: 48px;
+            background-position: right 12px center;
+            padding-right: 36px;
             cursor: pointer;
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
+        .platform-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
-        .social-input-wrapper {
-            position: relative;
+        .platform-item {
+            border: 1.5px solid var(--gray-200);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.15s;
         }
 
-        .social-icon {
-            position: absolute;
-            left: 16px;
-            top: 50%;
-            transform: translateY(-50%);
+        .platform-item.selected {
+            border-color: var(--orange);
+            background: var(--orange-light);
+        }
+
+        .platform-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 14px;
+            cursor: pointer;
+        }
+
+        .platform-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--gray-300);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s;
+            flex-shrink: 0;
+        }
+
+        .platform-item.selected .platform-checkbox {
+            background: var(--orange);
+            border-color: var(--orange);
+        }
+
+        .platform-checkbox svg {
+            width: 12px;
+            height: 12px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.15s;
+        }
+
+        .platform-item.selected .platform-checkbox svg {
+            opacity: 1;
+        }
+
+        .platform-icon {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .platform-icon svg {
             width: 22px;
             height: 22px;
-            color: var(--text-muted);
-            pointer-events: none;
+            color: var(--gray-500);
         }
 
-        .social-input-wrapper .form-input {
-            padding-left: 50px;
+        .platform-item.selected .platform-icon svg {
+            color: var(--dark);
         }
 
-        .social-input-wrapper .form-input:focus + .social-icon {
-            color: var(--accent);
+        .platform-name {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-600);
         }
 
-        .followers-row {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 12px;
+        .platform-item.selected .platform-name {
+            color: var(--dark);
+        }
+
+        .platform-fields {
+            display: none;
+            padding: 0 14px 14px;
+            gap: 8px;
+        }
+
+        .platform-item.selected .platform-fields {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .platform-fields input,
+        .platform-fields select {
+            background: var(--white);
+            padding: 10px 12px;
+            font-size: 0.875rem;
         }
 
         .category-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
-
-        .category-item {
-            position: relative;
-        }
-
-        .category-item input {
-            position: absolute;
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .category-label {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             gap: 8px;
-            padding: 16px 12px;
-            background: var(--bg-input);
-            border: 2px solid var(--border-color);
-            border-radius: var(--radius-md);
-            cursor: pointer;
-            transition: all var(--transition);
+        }
+
+        .cat-item input {
+            display: none;
+        }
+
+        .cat-box {
+            background: var(--gray-50);
+            border: 1.5px solid var(--gray-200);
+            padding: 12px 6px;
+            border-radius: var(--radius);
             text-align: center;
+            cursor: pointer;
+            transition: all 0.15s;
         }
 
-        .category-label:hover {
-            border-color: var(--border-light);
-            background: var(--bg-secondary);
+        .cat-box:active {
+            transform: scale(0.97);
         }
 
-        .category-item input:checked + .category-label {
-            border-color: var(--accent);
-            background: var(--accent-soft);
+        .cat-item input:checked + .cat-box {
+            background: var(--orange-light);
+            border-color: var(--orange);
         }
 
-        .category-emoji {
-            font-size: 1.5rem;
+        .cat-emoji {
+            font-size: 1.25rem;
+            display: block;
+            margin-bottom: 4px;
         }
 
-        .category-name {
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: var(--text-secondary);
+        .cat-name {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            color: var(--gray-500);
         }
 
-        .category-item input:checked + .category-label .category-name {
-            color: var(--accent);
+        .cat-item input:checked + .cat-box .cat-name {
+            color: var(--orange);
         }
 
-        .form-actions {
+        .btn-group {
             display: flex;
-            gap: 12px;
-            margin-top: 32px;
+            gap: 10px;
+            margin-top: 18px;
         }
 
         .btn {
-            display: inline-flex;
+            flex: 1;
+            padding: 14px 16px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            font-size: 0.9375rem;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            font-size: 1rem;
-            font-weight: 600;
+            gap: 6px;
             font-family: inherit;
-            padding: 16px 28px;
-            border-radius: var(--radius-md);
             border: none;
-            cursor: pointer;
-            transition: all var(--transition);
-        }
-
-        .btn-secondary {
-            background: var(--bg-input);
-            color: var(--text-secondary);
-            border: 2px solid var(--border-color);
-        }
-
-        .btn-secondary:hover {
-            background: var(--bg-secondary);
-            border-color: var(--border-light);
-            color: var(--text-primary);
         }
 
         .btn-primary {
-            flex: 1;
-            background: var(--gradient-1);
+            background: var(--orange);
             color: white;
-            box-shadow: 0 4px 20px var(--accent-glow);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px var(--accent-glow);
+            background: var(--orange-hover);
         }
 
         .btn-primary:active {
-            transform: translateY(0);
+            transform: scale(0.98);
+        }
+
+        .btn-secondary {
+            background: var(--gray-100);
+            color: var(--gray-600);
+        }
+
+        .btn-secondary:active {
+            background: var(--gray-200);
         }
 
         .btn svg {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
         }
 
-        .urgency-banner {
+        .form-footer {
+            padding: 14px 20px;
+            background: var(--gray-50);
+            border-top: 1px solid var(--gray-100);
+            text-align: center;
+        }
+
+        .form-footer p {
+            font-size: 0.6875rem;
+            color: var(--gray-400);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            padding: 14px 20px;
-            background: rgba(255, 107, 53, 0.1);
-            border: 1px solid rgba(255, 107, 53, 0.2);
-            border-radius: var(--radius-md);
-            margin-top: 24px;
+            gap: 4px;
         }
 
-        .urgency-icon {
-            width: 20px;
-            height: 20px;
-            color: var(--accent);
-            animation: shake 2s ease-in-out infinite;
+        .form-footer svg {
+            width: 12px;
+            height: 12px;
         }
 
-        @keyframes shake {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-10deg); }
-            75% { transform: rotate(10deg); }
-        }
-
-        .urgency-text {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-        }
-
-        .urgency-text strong {
-            color: var(--accent);
-        }
-
-        .success-state {
+        .success-screen {
             display: none;
             text-align: center;
-            padding: 20px 0;
+            padding: 24px 20px;
+            animation: fadeIn 0.3s ease;
         }
 
-        .success-state.show {
-            display: block;
-            animation: scaleIn 0.5s ease;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        @keyframes scaleIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .success-icon-wrapper {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 28px;
-            position: relative;
-        }
-
-        .success-circle {
-            width: 100%;
-            height: 100%;
+        .success-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 16px;
+            background: var(--success-light);
             border-radius: 50%;
-            background: var(--gradient-1);
             display: flex;
             align-items: center;
             justify-content: center;
-            animation: successPulse 2s ease-in-out infinite;
         }
 
-        @keyframes successPulse {
-            0%, 100% { box-shadow: 0 0 0 0 var(--accent-glow); }
-            50% { box-shadow: 0 0 0 20px transparent; }
+        .success-icon svg {
+            width: 28px;
+            height: 28px;
+            color: var(--success);
         }
 
-        .success-circle svg {
-            width: 48px;
-            height: 48px;
-            color: white;
-        }
-
-        .success-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.75rem;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-
-        .success-number {
-            display: inline-block;
-            padding: 4px 16px;
-            background: var(--accent-soft);
-            border-radius: var(--radius-full);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--accent);
-            margin: 16px 0;
-        }
-
-        .success-message {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 28px;
-        }
-
-        .success-perks {
-            background: var(--bg-input);
-            border-radius: var(--radius-lg);
-            padding: 24px;
-            margin-bottom: 28px;
-        }
-
-        .success-perks-title {
-            font-size: 0.75rem;
+        .success-screen h2 {
+            font-size: 1.125rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--text-muted);
-            margin-bottom: 16px;
+            color: var(--dark);
+            margin-bottom: 6px;
         }
 
-        .success-perk {
+        .success-screen > p {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+            margin-bottom: 20px;
+        }
+
+        .success-card {
+            background: var(--gray-50);
+            border-radius: var(--radius);
+            padding: 14px;
             display: flex;
             align-items: center;
             gap: 12px;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border-color);
+            text-align: left;
+            margin-bottom: 16px;
         }
 
-        .success-perk:last-child {
-            border-bottom: none;
-        }
-
-        .success-perk svg {
-            width: 20px;
-            height: 20px;
-            color: var(--success);
+        .success-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 0.8125rem;
             flex-shrink: 0;
         }
 
-        .success-perk span {
-            font-size: 0.9375rem;
-            color: var(--text-secondary);
+        .success-info h4 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--dark);
         }
 
-        .success-cta {
+        .success-info p {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            margin: 0;
+        }
+
+        .success-link {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 14px 28px;
-            background: var(--text-primary);
-            color: var(--bg-primary);
-            font-weight: 600;
-            border-radius: var(--radius-md);
-            transition: all var(--transition);
-        }
-
-        .success-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(255,255,255,0.1);
-        }
-
-        .social-proof {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            margin-top: 32px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .avatars {
-            display: flex;
-        }
-
-        .avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 2px solid var(--bg-card);
-            margin-left: -10px;
-            background: var(--bg-input);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.875rem;
-        }
-
-        .avatar:first-child {
-            margin-left: 0;
-        }
-
-        .avatar.more {
-            background: var(--accent);
-            color: white;
-            font-size: 0.6875rem;
-            font-weight: 700;
-        }
-
-        .social-proof-text {
+            gap: 4px;
             font-size: 0.8125rem;
-            color: var(--text-muted);
-        }
-
-        .social-proof-text strong {
-            color: var(--text-primary);
+            font-weight: 600;
+            color: var(--orange);
+            text-decoration: none;
         }
 
         .footer {
-            padding: 24px;
             text-align: center;
-            border-top: 1px solid var(--border-color);
+            padding: 16px 20px;
+            font-size: 0.6875rem;
+            color: var(--gray-400);
         }
 
-        .footer-text {
-            font-size: 0.8125rem;
-            color: var(--text-muted);
+        .footer a {
+            color: var(--gray-500);
+            text-decoration: none;
         }
 
-        .footer-links {
+        .footer-location {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 20px;
-            margin-top: 12px;
+            gap: 4px;
+            margin-bottom: 4px;
+            font-size: 0.6875rem;
+            color: var(--gray-400);
         }
 
-        .footer-link {
-            font-size: 0.8125rem;
-            color: var(--text-secondary);
-            transition: color var(--transition);
+
+        /* Hidden iframe for form submission */
+        .hidden-iframe {
+            display: none !important;
         }
 
-        .footer-link:hover {
-            color: var(--accent);
-        }
-
-        @media (max-width: 640px) {
-            .navbar {
-                padding: 16px 20px;
+        @media (max-width: 380px) {
+            .main {
+                padding: 16px 16px 28px;
             }
 
-            .logo-badge {
-                display: none;
+            .hero-title {
+                font-size: 1.375rem;
             }
 
-            .content {
-                padding: 24px 16px 60px;
-            }
-
-            .benefits {
+            .perks {
                 flex-direction: column;
+                gap: 8px;
                 align-items: center;
-                gap: 16px;
-            }
-
-            .form-card {
-                padding: 28px 20px;
-            }
-
-            .form-row,
-            .followers-row {
-                grid-template-columns: 1fr;
             }
 
             .category-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 8px;
-            }
-
-            .category-label {
-                padding: 14px 10px;
-            }
-
-            .form-actions {
-                flex-direction: column;
-            }
-
-            .btn-secondary {
-                order: 2;
-            }
-
-            .social-proof {
-                flex-direction: column;
-                gap: 12px;
-            }
-        }
-
-        @media (max-width: 380px) {
-            .form-title {
-                font-size: 1.75rem;
-            }
-
-            .spots-counter {
-                padding: 6px 12px;
-            }
-
-            .spots-text {
-                font-size: 0.75rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="bg-effects">
-        <div class="bg-glow bg-glow-1"></div>
-        <div class="bg-glow bg-glow-2"></div>
-        <div class="bg-grid"></div>
-    </div>
+
+    <!-- Hidden iframe for Google Form submission -->
+    <iframe name="hidden_iframe" class="hidden-iframe"></iframe>
+
+    <nav class="navbar">
+        <a href="https://vulse.io" class="logo">
+            <span class="logo-text">vulse.</span>
+            <span class="logo-badge">Creators</span>
+        </a>
+        <div class="nav-badge">
+            <span class="nav-badge-dot"></span>
+            Now Open
+        </div>
+    </nav>
 
     <main class="main">
-        <nav class="navbar">
-            <div class="logo">
-                vulse.
-                <span class="logo-badge">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="10" height="10">
-                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                    </svg>
-                    Creators
-                </span>
+        
+        <header class="hero">
+            <div class="hero-eyebrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+                First 1,000 Creators
             </div>
-            <div class="spots-counter">
-                <span class="spots-dot"></span>
-                <span class="spots-text"><span class="spots-number" id="spotsLeft">847</span> spots left</span>
+            <h1 class="hero-title">Where creators meet<br>the right brands</h1>
+            <p class="hero-desc">Open marketplace. Campaigns that fit you. Collaborations on your terms.</p>
+        </header>
+
+        <div class="perks">
+            <div class="perk">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                Priority access
             </div>
-        </nav>
-
-        <div class="content">
-            <div class="form-wrapper">
-                <div class="form-header">
-                    <div class="exclusive-badge">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                        </svg>
-                        First 1,000 Creators — 0% Commission Forever
-                    </div>
-                    <h1 class="form-title">
-                        Turn Your Influence<br>Into <span class="highlight">Income</span>
-                    </h1>
-                    <p class="form-subtitle">
-                        Join the exclusive early access list and never pay platform fees. Limited to the first 1,000 creators.
-                    </p>
-                </div>
-
-                <div class="benefits">
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M12 6v6l4 2"/>
-                            </svg>
-                        </div>
-                        <div class="benefit-text">
-                            <strong>2 min</strong>
-                            to complete
-                        </div>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                                <polyline points="22 4 12 14.01 9 11.01"/>
-                            </svg>
-                        </div>
-                        <div class="benefit-text">
-                            <strong>0% fees</strong>
-                            lifetime access
-                        </div>
-                    </div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            </svg>
-                        </div>
-                        <div class="benefit-text">
-                            <strong>Priority</strong>
-                            brand matching
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-card">
-                    <div class="progress-section">
-                        <div class="progress-header">
-                            <span class="progress-step" id="progressText">Step 1 of 3</span>
-                            <span class="progress-spots">🔥 Filling up fast</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="progressFill" style="width: 33%"></div>
-                        </div>
-                    </div>
-
-                    <form id="creatorForm">
-                        <div class="form-step active" data-step="1">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label class="form-label">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                                            <circle cx="12" cy="7" r="4"/>
-                                        </svg>
-                                        First Name
-                                    </label>
-                                    <input 
-                                        type="text" 
-                                        class="form-input" 
-                                        name="firstName" 
-                                        placeholder="Your first name"
-                                        required
-                                    >
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">
-                                        Last Name
-                                    </label>
-                                    <input 
-                                        type="text" 
-                                        class="form-input" 
-                                        name="lastName" 
-                                        placeholder="Your last name"
-                                        required
-                                    >
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                        <polyline points="22,6 12,13 2,6"/>
-                                    </svg>
-                                    Email Address
-                                </label>
-                                <input 
-                                    type="email" 
-                                    class="form-input" 
-                                    name="email" 
-                                    placeholder="you@example.com"
-                                    required
-                                >
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                                        <circle cx="12" cy="10" r="3"/>
-                                    </svg>
-                                    Country
-                                </label>
-                                <select class="form-select" name="country" required>
-                                    <option value="">Select your country</option>
-                                    <option value="IT">🇮🇹 Italy</option>
-                                    <option value="TR">🇹🇷 Turkey</option>
-                                </select>
-                            </div>
-
-                            <div class="form-actions">
-                                <button type="button" class="btn btn-primary" onclick="nextStep()">
-                                    Continue
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="form-step" data-step="2">
-                            <div class="form-group">
-                                <label class="form-label">
-                                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                                    Instagram
-                                </label>
-                                <div class="followers-row">
-                                    <div class="social-input-wrapper">
-                                        <input 
-                                            type="text" 
-                                            class="form-input" 
-                                            name="instagram" 
-                                            placeholder="@username"
-                                        >
-                                    </div>
-                                    <select class="form-select" name="instagramFollowers">
-                                        <option value="">Followers</option>
-                                        <option value="1k-10k">1K - 10K</option>
-                                        <option value="10k-50k">10K - 50K</option>
-                                        <option value="50k-100k">50K - 100K</option>
-                                        <option value="100k-500k">100K - 500K</option>
-                                        <option value="500k+">500K+</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label">
-                                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg>
-                                    TikTok
-                                </label>
-                                <div class="followers-row">
-                                    <div class="social-input-wrapper">
-                                        <input 
-                                            type="text" 
-                                            class="form-input" 
-                                            name="tiktok" 
-                                            placeholder="@username"
-                                        >
-                                    </div>
-                                    <select class="form-select" name="tiktokFollowers">
-                                        <option value="">Followers</option>
-                                        <option value="1k-10k">1K - 10K</option>
-                                        <option value="10k-50k">10K - 50K</option>
-                                        <option value="50k-100k">50K - 100K</option>
-                                        <option value="100k-500k">100K - 500K</option>
-                                        <option value="500k+">500K+</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label">
-                                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                                    YouTube
-                                </label>
-                                <div class="followers-row">
-                                    <div class="social-input-wrapper">
-                                        <input 
-                                            type="text" 
-                                            class="form-input" 
-                                            name="youtube" 
-                                            placeholder="@channel"
-                                        >
-                                    </div>
-                                    <select class="form-select" name="youtubeSubscribers">
-                                        <option value="">Subscribers</option>
-                                        <option value="1k-10k">1K - 10K</option>
-                                        <option value="10k-50k">10K - 50K</option>
-                                        <option value="50k-100k">50K - 100K</option>
-                                        <option value="100k-500k">100K - 500K</option>
-                                        <option value="500k+">500K+</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-actions">
-                                <button type="button" class="btn btn-secondary" onclick="prevStep()">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M19 12H5M12 19l-7-7 7-7"/>
-                                    </svg>
-                                </button>
-                                <button type="button" class="btn btn-primary" onclick="nextStep()">
-                                    Almost there!
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="form-step" data-step="3">
-                            <div class="form-group">
-                                <label class="form-label">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                                    </svg>
-                                    What's your content about?
-                                </label>
-                                <div class="category-grid">
-                                    <label class="category-item">
-                                        <input type="checkbox" name="categories" value="lifestyle">
-                                        <div class="category-label">
-                                            <span class="category-emoji">✨</span>
-                                            <span class="category-name">Lifestyle</span>
-                                        </div>
-                                    </label>
-                                    <label class="category-item">
-                                        <input type="checkbox" name="categories" value="fashion">
-                                        <div class="category-label">
-                                            <span class="category-emoji">👗</span>
-                                            <span class="category-name">Fashion</span>
-                                        </div>
-                                    </label>
-                                    <label class="category-item">
-                                        <input type="checkbox" name="categories" value="beauty">
-                                        <div class="category-label">
-                                            <span class="category-emoji">💄</span>
-                                            <span class="category-name">Beauty</span>
-                                        </div>
-                                    </label>
-                                    <label class="category-item">
-                                        <input type="checkbox" name="categories" value="fitness">
-                                        <div class="category-label">
-                                            <span class="category-emoji">💪</span>
-                                            <span class="category-name">Fitness</span>
-                                        </div>
-                                    </label>
-                                    <label class="category-item">
-                                        <input type="checkbox" name="categories" value="food">
-                                        <div class="category-label">
-                                            <span class="category-emoji">🍕</span>
-                                            <span class="category-name">Food</span>
-                                        </div>
-                                    </label>
-                                    <label class="category-item">
-                                        <input type="checkbox" name="categories" value="travel">
-                                        <div class="category-label">
-                                            <span class="category-emoji">✈️</span>
-                                            <span class="category-name">Travel</span>
-                                        </div>
-                                    </label>
-                                    <label class="category-item">
-                                        <input type="checkbox" name="categories" value="tech">
-                                        <div class="category-label">
-                                            <span class="category-emoji">📱</span>
-                                            <span class="category-name">Tech</span>
-                                        </div>
-                                    </label>
-                                    <label class="category-item">
-                                        <input type="checkbox" name="categories" value="gaming">
-                                        <div class="category-label">
-                                            <span class="category-emoji">🎮</span>
-                                            <span class="category-name">Gaming</span>
-                                        </div>
-                                    </label>
-                                    <label class="category-item">
-                                        <input type="checkbox" name="categories" value="other">
-                                        <div class="category-label">
-                                            <span class="category-emoji">🎯</span>
-                                            <span class="category-name">Other</span>
-                                        </div>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="form-actions">
-                                <button type="button" class="btn btn-secondary" onclick="prevStep()">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M19 12H5M12 19l-7-7 7-7"/>
-                                    </svg>
-                                </button>
-                                <button type="submit" class="btn btn-primary">
-                                    🎉 Claim My Spot
-                                </button>
-                            </div>
-
-                            <div class="urgency-banner">
-                                <svg class="urgency-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                                    <line x1="12" y1="9" x2="12" y2="13"/>
-                                    <line x1="12" y1="17" x2="12.01" y2="17"/>
-                                </svg>
-                                <span class="urgency-text">Only <strong id="urgencySpots">847</strong> spots remaining for 0% commission</span>
-                            </div>
-                        </div>
-
-                        <div class="success-state" id="successState">
-                            <div class="success-icon-wrapper">
-                                <div class="success-circle">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                                        <path d="M20 6L9 17l-5-5"/>
-                                    </svg>
-                                </div>
-                            </div>
-                            <h2 class="success-title">You're in! 🎉</h2>
-                            <div class="success-number" id="successNumber">#847</div>
-                            <p class="success-message">
-                                Congratulations! You've secured your spot among the first 1,000 creators. 
-                                You'll get <strong>0% commission forever</strong> when we launch.
-                            </p>
-
-                            <div class="success-perks">
-                                <div class="success-perks-title">Your Exclusive Perks</div>
-                                <div class="success-perk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                        <path d="M20 6L9 17l-5-5"/>
-                                    </svg>
-                                    <span>Lifetime 0% platform commission</span>
-                                </div>
-                                <div class="success-perk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                        <path d="M20 6L9 17l-5-5"/>
-                                    </svg>
-                                    <span>Priority access to brand campaigns</span>
-                                </div>
-                                <div class="success-perk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                        <path d="M20 6L9 17l-5-5"/>
-                                    </svg>
-                                    <span>Verified creator badge</span>
-                                </div>
-                                <div class="success-perk">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                                        <path d="M20 6L9 17l-5-5"/>
-                                    </svg>
-                                    <span>Early access to new features</span>
-                                </div>
-                            </div>
-
-                            <a href="https://vulse.io" class="success-cta">
-                                Back to Vulse
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
-                                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </form>
-
-                    <div class="social-proof" id="socialProof">
-                        <div class="avatars">
-                            <div class="avatar">🇮🇹</div>
-                            <div class="avatar">🇹🇷</div>
-                            <div class="avatar">🇮🇹</div>
-                            <div class="avatar">🇹🇷</div>
-                            <div class="avatar more">+153</div>
-                        </div>
-                        <span class="social-proof-text">
-                            <strong>153 creators</strong> joined this week
-                        </span>
-                    </div>
-                </div>
+            <div class="perk">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                Verified badge
+            </div>
+            <div class="perk">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                Zero fees period
             </div>
         </div>
 
-        <footer class="footer">
-            <p class="footer-text">© 2026 Vulse · Turin, Italy</p>
-            <div class="footer-links">
-                <a href="mailto:hello@vulse.io" class="footer-link">hello@vulse.io</a>
-                <a href="https://instagram.com/vulse.io" target="_blank" class="footer-link">Instagram</a>
-                <a href="https://linkedin.com/company/vulse-io" target="_blank" class="footer-link">LinkedIn</a>
+        <div class="form-card">
+            
+            <div class="form-progress" id="formProgress">
+                <div class="progress-item active" id="prog1">
+                    <span class="progress-num">1</span>Basics
+                </div>
+                <div class="progress-item" id="prog2">
+                    <span class="progress-num">2</span>Platforms
+                </div>
+                <div class="progress-item" id="prog3">
+                    <span class="progress-num">3</span>Content
+                </div>
             </div>
-        </footer>
+
+            <div class="form-body">
+                <form id="creatorForm" 
+                      action="https://docs.google.com/forms/d/e/1FAIpQLSePuDf8LBNPU9maSFcDIRPYL8gZUleDaILVj3BQSIrS_4Avtw/formResponse"
+                      method="POST"
+                      target="hidden_iframe">
+                    
+                    <!-- Step 1: Basic Info -->
+                    <div class="step active" id="step1">
+                        <div class="form-group">
+                            <label class="label">Your name</label>
+                            <input type="text" name="entry.1407171878" id="fullname" placeholder="Full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Email</label>
+                            <input type="email" name="entry.1272699392" id="email" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="label">Country</label>
+                            <select name="entry.2086187820" id="country" required>
+                                <option value="" disabled selected>Select country</option>
+                                <option value="Turkey">Turkey</option>
+                                <option value="Italy">Italy</option>
+                                <option value="United States">United States</option>
+                                <option value="United Kingdom">United Kingdom</option>
+                                <option value="Germany">Germany</option>
+                                <option value="France">France</option>
+                                <option value="Spain">Spain</option>
+                                <option value="Netherlands">Netherlands</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary" onclick="goToStep(2)">
+                                Continue
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Platforms -->
+                    <div class="step" id="step2">
+                        <div class="form-group">
+                            <label class="label">Where are you active? <span class="label-sub">(select at least 1)</span></label>
+                            
+                            <div class="platform-list">
+                                <!-- Instagram -->
+                                <div class="platform-item" id="platform-ig">
+                                    <div class="platform-header" onclick="togglePlatform('ig')">
+                                        <div class="platform-checkbox">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                <polyline points="20 6 9 17 4 12"/>
+                                            </svg>
+                                        </div>
+                                        <div class="platform-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                                                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                                                <circle cx="12" cy="12" r="4"/>
+                                                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+                                            </svg>
+                                        </div>
+                                        <span class="platform-name">Instagram</span>
+                                    </div>
+                                    <div class="platform-fields">
+                                        <input type="text" name="entry.1147782875" id="ig_handle" placeholder="@username">
+                                        <select name="entry.2123843384" id="ig_followers">
+                                            <option value="" disabled selected>Follower range</option>
+                                            <option value="1K-10K">1K – 10K</option>
+                                            <option value="10K-50K">10K – 50K</option>
+                                            <option value="50K-100K">50K – 100K</option>
+                                            <option value="100K+">100K+</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- TikTok -->
+                                <div class="platform-item" id="platform-tiktok">
+                                    <div class="platform-header" onclick="togglePlatform('tiktok')">
+                                        <div class="platform-checkbox">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                <polyline points="20 6 9 17 4 12"/>
+                                            </svg>
+                                        </div>
+                                        <div class="platform-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                                                <path d="M9 12a4 4 0 1 0 4 4V4c.5 2.5 2.5 4.5 5 5"/>
+                                            </svg>
+                                        </div>
+                                        <span class="platform-name">TikTok</span>
+                                    </div>
+                                    <div class="platform-fields">
+                                        <input type="text" name="entry.2121400325" id="tiktok_handle" placeholder="@username">
+                                        <select name="entry.1213567779" id="tiktok_followers">
+                                            <option value="" disabled selected>Follower range</option>
+                                            <option value="1K-10K">1K – 10K</option>
+                                            <option value="10K-50K">10K – 50K</option>
+                                            <option value="50K-100K">50K – 100K</option>
+                                            <option value="100K+">100K+</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- YouTube -->
+                                <div class="platform-item" id="platform-youtube">
+                                    <div class="platform-header" onclick="togglePlatform('youtube')">
+                                        <div class="platform-checkbox">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                                <polyline points="20 6 9 17 4 12"/>
+                                            </svg>
+                                        </div>
+                                        <div class="platform-icon">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+                                                <rect x="2" y="4" width="20" height="16" rx="4"/>
+                                                <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/>
+                                            </svg>
+                                        </div>
+                                        <span class="platform-name">YouTube</span>
+                                    </div>
+                                    <div class="platform-fields">
+                                        <input type="text" name="entry.1918352207" id="youtube_handle" placeholder="Channel name">
+                                        <select name="entry.2119285844" id="youtube_subs">
+                                            <option value="" disabled selected>Subscriber range</option>
+                                            <option value="1K-10K">1K – 10K</option>
+                                            <option value="10K-50K">10K – 50K</option>
+                                            <option value="50K-100K">50K – 100K</option>
+                                            <option value="100K+">100K+</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-secondary" onclick="goToStep(1)">Back</button>
+                            <button type="button" class="btn btn-primary" onclick="goToStep(3)">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Categories -->
+                    <div class="step" id="step3">
+                        <div class="form-group">
+                            <label class="label">What's your content about? <span class="label-sub">(pick multiple)</span></label>
+                            <div class="category-grid">
+                                <label class="cat-item">
+                                    <input type="checkbox" name="category" value="Lifestyle">
+                                    <div class="cat-box">
+                                        <span class="cat-emoji">✨</span>
+                                        <span class="cat-name">Lifestyle</span>
+                                    </div>
+                                </label>
+                                <label class="cat-item">
+                                    <input type="checkbox" name="category" value="Fashion">
+                                    <div class="cat-box">
+                                        <span class="cat-emoji">👗</span>
+                                        <span class="cat-name">Fashion</span>
+                                    </div>
+                                </label>
+                                <label class="cat-item">
+                                    <input type="checkbox" name="category" value="Beauty">
+                                    <div class="cat-box">
+                                        <span class="cat-emoji">💄</span>
+                                        <span class="cat-name">Beauty</span>
+                                    </div>
+                                </label>
+                                <label class="cat-item">
+                                    <input type="checkbox" name="category" value="Tech">
+                                    <div class="cat-box">
+                                        <span class="cat-emoji">📱</span>
+                                        <span class="cat-name">Tech</span>
+                                    </div>
+                                </label>
+                                <label class="cat-item">
+                                    <input type="checkbox" name="category" value="Fitness">
+                                    <div class="cat-box">
+                                        <span class="cat-emoji">💪</span>
+                                        <span class="cat-name">Fitness</span>
+                                    </div>
+                                </label>
+                                <label class="cat-item">
+                                    <input type="checkbox" name="category" value="Food">
+                                    <div class="cat-box">
+                                        <span class="cat-emoji">🍔</span>
+                                        <span class="cat-name">Food</span>
+                                    </div>
+                                </label>
+                                <label class="cat-item">
+                                    <input type="checkbox" name="category" value="Gaming">
+                                    <div class="cat-box">
+                                        <span class="cat-emoji">🎮</span>
+                                        <span class="cat-name">Gaming</span>
+                                    </div>
+                                </label>
+                                <label class="cat-item">
+                                    <input type="checkbox" name="category" value="Travel">
+                                    <div class="cat-box">
+                                        <span class="cat-emoji">✈️</span>
+                                        <span class="cat-name">Travel</span>
+                                    </div>
+                                </label>
+                                <label class="cat-item">
+                                    <input type="checkbox" name="category" value="Education">
+                                    <div class="cat-box">
+                                        <span class="cat-emoji">📚</span>
+                                        <span class="cat-name">Education</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <!-- Hidden input for categories - will be populated by JS -->
+                            <input type="hidden" name="entry.2140272413" id="categories_hidden">
+                        </div>
+
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-secondary" onclick="goToStep(2)">Back</button>
+                            <button type="submit" class="btn btn-primary" id="submitBtn">Join waitlist</button>
+                        </div>
+                    </div>
+
+                </form>
+
+                <!-- Success -->
+                <div class="success-screen" id="successScreen">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                    </div>
+                    <h2>You're on the list!</h2>
+                    <p>You've secured your spot among the first 1,000. We'll reach out when we launch.</p>
+                    
+                    <div class="success-card">
+                        <div class="success-avatar" id="successAvatar">VU</div>
+                        <div class="success-info">
+                            <h4 id="successName">Name</h4>
+                            <p>Early Access · First 1,000</p>
+                        </div>
+                    </div>
+
+                    <a href="https://vulse.io" class="success-link">
+                        Back to vulse.io
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="form-footer" id="formFooter">
+                <p>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    </svg>
+                    Your data is safe · No spam, ever
+                </p>
+            </div>
+
+        </div>
+
     </main>
 
+    <footer class="footer">
+        <div class="footer-location">
+            Turin, Italy
+        </div>
+        © 2025 Vulse. · <a href="https://vulse.io">vulse.io</a>
+    </footer>
+
     <script>
-        const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse';
-        
-        const FORM_FIELDS = {
-            firstName: 'entry.XXXXXX',
-            lastName: 'entry.XXXXXX',
-            email: 'entry.XXXXXX',
-            country: 'entry.XXXXXX',
-            instagram: 'entry.XXXXXX',
-            instagramFollowers: 'entry.XXXXXX',
-            tiktok: 'entry.XXXXXX',
-            tiktokFollowers: 'entry.XXXXXX',
-            youtube: 'entry.XXXXXX',
-            youtubeSubscribers: 'entry.XXXXXX',
-            categories: 'entry.XXXXXX'
-        };
-
-        function getSpots() {
-            let data = localStorage.getItem('vulse_spots');
-            const now = Date.now();
-            
-            if (data) {
-                data = JSON.parse(data);
-                const hoursPassed = (now - data.timestamp) / (1000 * 60 * 60);
-                const decrease = Math.floor(hoursPassed / 2);
-                data.spots = Math.max(100, data.spots - decrease);
-                data.timestamp = now;
-            } else {
-                data = {
-                    spots: Math.floor(Math.random() * 100) + 800,
-                    timestamp: now
-                };
-            }
-            
-            localStorage.setItem('vulse_spots', JSON.stringify(data));
-            return data.spots;
-        }
-
-        function decreaseSpot() {
-            let data = JSON.parse(localStorage.getItem('vulse_spots') || '{}');
-            data.spots = Math.max(100, (data.spots || 847) - 1);
-            data.timestamp = Date.now();
-            localStorage.setItem('vulse_spots', JSON.stringify(data));
-            return data.spots;
-        }
-
-        const initialSpots = getSpots();
-        document.getElementById('spotsLeft').textContent = initialSpots;
-        document.getElementById('urgencySpots').textContent = initialSpots;
-
-        setInterval(() => {
-            const random = Math.random();
-            if (random > 0.7) {
-                const currentSpots = parseInt(document.getElementById('spotsLeft').textContent);
-                if (currentSpots > 100) {
-                    const newSpots = currentSpots - 1;
-                    document.getElementById('spotsLeft').textContent = newSpots;
-                    document.getElementById('urgencySpots').textContent = newSpots;
-                }
-            }
-        }, 30000);
-
         let currentStep = 1;
-        const totalSteps = 3;
+        const selectedPlatforms = new Set();
 
         function updateProgress() {
-            const progress = (currentStep / totalSteps) * 100;
-            document.getElementById('progressFill').style.width = `${progress}%`;
-            document.getElementById('progressText').textContent = `Step ${currentStep} of ${totalSteps}`;
+            for (let i = 1; i <= 3; i++) {
+                const el = document.getElementById('prog' + i);
+                el.className = 'progress-item';
+                if (i < currentStep) el.classList.add('completed');
+                if (i === currentStep) el.classList.add('active');
+            }
         }
 
-        function showStep(step) {
-            document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
-            document.querySelector(`.form-step[data-step="${step}"]`).classList.add('active');
+        function goToStep(step) {
+            if (step > currentStep) {
+                if (currentStep === 1 && !validateStep1()) return;
+                if (currentStep === 2 && !validateStep2()) return;
+            }
+
+            document.getElementById('step' + currentStep).classList.remove('active');
+            document.getElementById('step' + step).classList.add('active');
+            currentStep = step;
             updateProgress();
         }
 
-        function validateStep(step) {
-            const stepEl = document.querySelector(`.form-step[data-step="${step}"]`);
-            const inputs = stepEl.querySelectorAll('.form-input[required], .form-select[required]');
-            let valid = true;
+        function validateStep1() {
+            const name = document.getElementById('fullname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const country = document.getElementById('country').value;
 
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    input.style.borderColor = '#ef4444';
-                    valid = false;
-                } else {
-                    input.style.borderColor = '';
-                }
-            });
-
-            const email = stepEl.querySelector('[name="email"]');
-            if (email && email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-                email.style.borderColor = '#ef4444';
-                valid = false;
+            if (!name) { alert('Please enter your name.'); return false; }
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { 
+                alert('Please enter a valid email.'); return false; 
             }
-
-            if (step === 2) {
-                const ig = document.querySelector('[name="instagram"]').value;
-                const tt = document.querySelector('[name="tiktok"]').value;
-                const yt = document.querySelector('[name="youtube"]').value;
-                if (!ig && !tt && !yt) {
-                    alert('Please add at least one social media account');
-                    valid = false;
-                }
-            }
-
-            if (step === 3) {
-                const categories = document.querySelectorAll('[name="categories"]:checked');
-                if (categories.length === 0) {
-                    alert('Please select at least one category');
-                    valid = false;
-                }
-            }
-
-            return valid;
+            if (!country) { alert('Please select your country.'); return false; }
+            return true;
         }
 
-        function nextStep() {
-            if (validateStep(currentStep)) {
-                currentStep++;
-                showStep(currentStep);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+        function validateStep2() {
+            if (selectedPlatforms.size === 0) {
+                alert('Please select at least one platform.');
+                return false;
+            }
+
+            for (const platform of selectedPlatforms) {
+                let handleId, followersId;
+                
+                if (platform === 'ig') {
+                    handleId = 'ig_handle';
+                    followersId = 'ig_followers';
+                } else if (platform === 'tiktok') {
+                    handleId = 'tiktok_handle';
+                    followersId = 'tiktok_followers';
+                } else if (platform === 'youtube') {
+                    handleId = 'youtube_handle';
+                    followersId = 'youtube_subs';
+                }
+
+                const handle = document.getElementById(handleId).value.trim();
+                const followers = document.getElementById(followersId).value;
+                
+                if (!handle) { 
+                    alert('Please enter your username for selected platforms.'); 
+                    return false; 
+                }
+                if (!followers) { 
+                    alert('Please select follower range for selected platforms.'); 
+                    return false; 
+                }
+            }
+            return true;
+        }
+
+        function validateStep3() {
+            const niches = document.querySelectorAll('input[name="category"]:checked');
+            if (niches.length === 0) {
+                alert('Please select at least one category.');
+                return false;
+            }
+            return true;
+        }
+
+        function togglePlatform(platform) {
+            const el = document.getElementById('platform-' + platform);
+            if (selectedPlatforms.has(platform)) {
+                selectedPlatforms.delete(platform);
+                el.classList.remove('selected');
+            } else {
+                selectedPlatforms.add(platform);
+                el.classList.add('selected');
+                setTimeout(() => {
+                    let inputId;
+                    if (platform === 'ig') inputId = 'ig_handle';
+                    else if (platform === 'tiktok') inputId = 'tiktok_handle';
+                    else if (platform === 'youtube') inputId = 'youtube_handle';
+                    
+                    const input = document.getElementById(inputId);
+                    if (input) input.focus();
+                }, 100);
             }
         }
-
-        function prevStep() {
-            currentStep--;
-            showStep(currentStep);
-        }
-
-        document.querySelectorAll('.form-input, .form-select').forEach(input => {
-            input.addEventListener('input', () => {
-                input.style.borderColor = '';
-            });
-        });
 
         document.getElementById('creatorForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            if (!validateStep(currentStep)) return;
-
-            const formData = new FormData(this);
-            const params = new URLSearchParams();
-
-            for (const [key, value] of formData.entries()) {
-                if (FORM_FIELDS[key] && value) {
-                    if (key === 'categories') {
-                        const cats = formData.getAll('categories');
-                        params.append(FORM_FIELDS[key], cats.join(', '));
-                    } else {
-                        params.append(FORM_FIELDS[key], value);
-                    }
-                }
+            if (!validateStep3()) {
+                e.preventDefault();
+                return;
             }
 
-            const url = `${GOOGLE_FORM_URL}?${params.toString()}`;
-            
-            const iframe = document.createElement('iframe');
-            iframe.style.display = 'none';
-            iframe.src = url;
-            document.body.appendChild(iframe);
+            // Collect selected categories and put in hidden field
+            const selectedCategories = [];
+            document.querySelectorAll('input[name="category"]:checked').forEach(cb => {
+                selectedCategories.push(cb.value);
+            });
+            document.getElementById('categories_hidden').value = selectedCategories.join(', ');
 
-            const newSpots = decreaseSpot();
-            const userNumber = 1000 - newSpots;
+            // Get name for success screen
+            const fullname = document.getElementById('fullname').value.trim();
+            const initials = fullname.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
 
-            document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
-            document.querySelector('.progress-section').style.display = 'none';
-            document.getElementById('socialProof').style.display = 'none';
-            document.getElementById('successNumber').textContent = `#${userNumber}`;
-            document.getElementById('successState').classList.add('show');
+            // Update button state
+            const btn = document.getElementById('submitBtn');
+            btn.innerHTML = 'Submitting...';
+            btn.disabled = true;
 
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Show success after short delay (form submits to iframe)
+            setTimeout(() => {
+                document.getElementById('successAvatar').innerText = initials;
+                document.getElementById('successName').innerText = fullname;
+                
+                document.getElementById('creatorForm').style.display = 'none';
+                document.getElementById('formProgress').style.display = 'none';
+                document.getElementById('formFooter').style.display = 'none';
+                document.getElementById('successScreen').style.display = 'block';
+            }, 1000);
         });
     </script>
+
 </body>
 </html>

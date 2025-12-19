@@ -337,21 +337,6 @@
             cursor: pointer;
         }
 
-        .phone-input-wrapper {
-            display: flex;
-            gap: 8px;
-        }
-
-        .phone-prefix {
-            width: 90px;
-            flex-shrink: 0;
-            text-align: center;
-        }
-
-        .phone-number {
-            flex: 1;
-        }
-
         .platform-list {
             display: flex;
             flex-direction: column;
@@ -703,14 +688,6 @@
             .category-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-
-            .phone-input-wrapper {
-                flex-direction: column;
-            }
-
-            .phone-prefix {
-                width: 100%;
-            }
         }
     </style>
 </head>
@@ -738,7 +715,7 @@
                 </svg>
                 İlk 1.000 Creator
             </div>
-            <h1 class="hero-title">Markalarla buluşmanın<br>yeni yolu</h1>
+            <h1 class="hero-title">Markalarla buluşmansatisfn<br>yeni yolu</h1>
             <p class="hero-desc">Açık pazaryeri. Sana uygun kampanyalar. Özgür iş birlikleri.</p>
         </header>
 
@@ -790,23 +767,7 @@
                         </div>
                         <div class="form-group">
                             <label class="label">E-posta</label>
-                            <input type="email" name="entry.1272699392" id="email" placeholder="ornek@vulse.io" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="label">Telefon <span class="label-sub">(opsiyonel)</span></label>
-                            <div class="phone-input-wrapper">
-                                <select name="entry.1756809265" id="phone_prefix" class="phone-prefix">
-                                    <option value="+90">+90</option>
-                                    <option value="+39">+39</option>
-                                    <option value="+49">+49</option>
-                                    <option value="+44">+44</option>
-                                    <option value="+1">+1</option>
-                                    <option value="+33">+33</option>
-                                    <option value="+34">+34</option>
-                                    <option value="+31">+31</option>
-                                </select>
-                                <input type="tel" name="entry.831248680" id="phone_number" class="phone-number" placeholder="5XX XXX XX XX">
-                            </div>
+                            <input type="email" name="entry.1272699392" id="email" placeholder="ornek@email.com" required>
                         </div>
                         <div class="form-group">
                             <label class="label">Ülke</label>
@@ -832,9 +793,6 @@
                             </button>
                         </div>
                     </div>
-
-                    <!-- Hidden field for full phone number -->
-                    <input type="hidden" name="entry.FULL_PHONE" id="full_phone">
 
                     <div class="step" id="step2">
                         <div class="form-group">
@@ -1090,14 +1048,6 @@
                 alert('Geçerli bir e-posta adresi gir.'); return false; 
             }
             if (!country) { alert('Lütfen ülke seç.'); return false; }
-
-            // Combine phone prefix and number into hidden field (optional)
-            const phonePrefix = document.getElementById('phone_prefix').value;
-            const phoneNumber = document.getElementById('phone_number').value.trim();
-            if (phoneNumber) {
-                document.getElementById('full_phone').value = phonePrefix + ' ' + phoneNumber;
-            }
-
             return true;
         }
 
@@ -1171,18 +1121,22 @@
                 return;
             }
 
+
             const selectedCategories = [];
             document.querySelectorAll('input[name="category"]:checked').forEach(cb => {
                 selectedCategories.push(cb.value);
             });
             document.getElementById('categories_hidden').value = selectedCategories.join(', ');
 
+
             const fullname = document.getElementById('fullname').value.trim();
             const initials = fullname.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+
 
             const btn = document.getElementById('submitBtn');
             btn.innerHTML = 'Gönderiliyor...';
             btn.disabled = true;
+
 
             setTimeout(() => {
                 document.getElementById('successAvatar').innerText = initials;
